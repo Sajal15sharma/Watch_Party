@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../components/Logo';
 
 const API_URL = import.meta.env.VITE_API_URL || '';
 
@@ -64,8 +65,7 @@ export default function Home() {
         <div className="home-inner">
 
           <div className="home-header">
-            <div className="home-logo">🎬</div>
-            <h1 className="home-title">Watch Party</h1>
+            <Logo size="lg" />
             <p className="home-subtitle">Watch YouTube videos in real-time sync with friends</p>
           </div>
 

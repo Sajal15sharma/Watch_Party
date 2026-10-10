@@ -1,7 +1,8 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSocket } from '../context/SocketContext';
 import { useRoom } from '../context/RoomContext';
+import Logo from '../components/Logo';
 import YouTubePlayer from '../components/YouTubePlayer';
 import PlaybackControls from '../components/PlaybackControls';
 import ParticipantPanel from '../components/ParticipantPanel';
@@ -36,7 +37,7 @@ export default function RoomPage() {
     if (!isInRoom && !localStorage.getItem('wp_username')) {
       navigate('/');
     }
-  }, [isInRoom]);
+  }, [isInRoom, navigate]);
 
   const handleLeave = () => {
     leaveRoom();
@@ -92,8 +93,7 @@ export default function RoomPage() {
         {/* Top bar */}
         <div className="topbar">
           <div className="topbar-brand">
-            <div className="topbar-logo">🎬</div>
-            <span className="topbar-title">Watch Party</span>
+            <Logo size="sm" />
           </div>
 
           <div className="topbar-room">
