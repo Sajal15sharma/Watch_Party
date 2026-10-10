@@ -110,7 +110,7 @@ export default function RoomPage() {
 
           <div className="topbar-actions">
             <span className={`role-badge ${roleClass}`}>
-              {myRole === 'host' ? '👑 ' : ''}{myRole}
+              {myRole === 'host' ? '👑 Host' : myRole === 'moderator' ? '🛡️ Moderator' : '👤 Participant'}
             </span>
             <button
               id="leave-btn"

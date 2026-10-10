@@ -10,7 +10,7 @@ function RoleBadge({ role }: { role: Role }) {
     role === 'moderator' ? 'role-moderator' : 'role-participant';
   return (
     <span className={`role-badge ${cls}`}>
-      {role === 'host' ? '👑 ' : ''}{role}
+      {role === 'host' ? '👑 Host' : role === 'moderator' ? '🛡️ Moderator' : '👤 Participant'}
     </span>
   );
 }
@@ -67,7 +67,7 @@ function ParticipantRow({
                   className="ctx-btn"
                   onClick={() => { onAssignRole(p.userId, 'moderator'); setMenuOpen(false); }}
                 >
-                  ↑ Make Moderator
+                  🛡️ Make Moderator
                 </button>
               )}
               {p.role === 'moderator' && (
@@ -75,7 +75,7 @@ function ParticipantRow({
                   className="ctx-btn"
                   onClick={() => { onAssignRole(p.userId, 'participant'); setMenuOpen(false); }}
                 >
-                  ↓ Remove Moderator
+                  👤 Remove Moderator
                 </button>
               )}
               {/* Transfer host */}

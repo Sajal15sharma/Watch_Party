@@ -22,13 +22,17 @@ export default function PlaybackControls() {
 
   const canControl = myRole === 'host' || myRole === 'moderator';
 
-  // Participants see a status message instead of controls
+  // Participants see a sleek "View-only" banner
   if (!canControl) {
     return (
-      <div className="controls-bar" style={{ justifyContent: 'center' }}>
-        <p className="controls-label" style={{ margin: 0 }}>
-          👁️ You are a viewer — only the host or moderators can control playback.
-        </p>
+      <div className="view-only-banner">
+        <div className="view-only-icon">👁️</div>
+        <div>
+          <span className="view-only-title">View-Only Mode</span>
+          <p className="view-only-desc">
+            You are currently a viewer. Only the host or moderators can control video playback.
+          </p>
+        </div>
       </div>
     );
   }
@@ -50,7 +54,7 @@ export default function PlaybackControls() {
         <input
           id="video-url-input"
           type="text"
-          placeholder="Paste YouTube URL or video ID…"
+          placeholder="Paste YouTube URL or Video ID…"
           value={urlInput}
           onChange={e => { setUrlInput(e.target.value); setError(''); }}
           onKeyDown={e => e.key === 'Enter' && handleChangeVideo()}
@@ -65,7 +69,7 @@ export default function PlaybackControls() {
         </button>
       </div>
 
-      {error && <p className="error-text" style={{ textAlign: 'left', marginTop: 6 }}>{error}</p>}
+      {error && <p className="error-text" style={{ textAlign: 'left', marginTop: 8 }}>{error}</p>}
 
       <p className="controls-label">
         {myRole === 'host' ? '👑 You are the host' : '🛡️ You are a moderator'} — use the
