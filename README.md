@@ -3,7 +3,7 @@
 Watch Party is a full-stack, real-time web application that allows users to watch YouTube videos in perfect synchronization with their friends. Engineered with a robust, race-condition hardened WebSocket architecture, it features strict role-based access control (Host, Moderator, Participant) to govern video playback and room management. 
 
 ### 1. Working Application
-**Live Deployment URL:** [https://youtube-watch-party-6mde.onrender.com](https://youtube-watch-party-6mde.onrender.com)
+**Live Deployment URL:** (will be added after deployment)
 
 The application is fully functional both locally and in production. It utilizes a unified backend/frontend server deployment where the Node.js backend serves the compiled React application.
 
@@ -40,7 +40,7 @@ The application is fully functional both locally and in production. It utilizes 
 
 **Installation:**
 ```bash
-git clone https://github.com/your-username/watch-party.git
+git clone https://github.com/MY_GITHUB_USERNAME/watch-party.git
 cd watch-party
 npm install          # installs root + all workspaces
 ```
